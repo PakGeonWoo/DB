@@ -1,0 +1,128 @@
+# PostgreSQL_psql 기본 명령어 #
+
+
+1. PostgreSQL 설치 시 기본 계정인 postgres가 생성됨
+
+   $ su - postgres
+
+ 
+
+2. postgresql 접속
+
+   $ psql 
+
+   postgres=#
+
+   
+
+ 
+
+3. psql 기본 명령어
+
+   - DB 접속
+
+      : psql -U [user명] -d [db명]
+
+      : psql -U [user명] [db명]
+
+ 
+
+   - 다른 DB 접속
+
+      : \c [db명]
+
+ 
+
+   - psql 종료 
+
+      : \q
+
+ 
+
+   - psql.edit로 쿼리 수정, 실행
+
+      : \e
+
+       -> psql.edit파일이 열리고 해당 파일에 쿼리 수정후 esc + :wq 하면 실행결과 출력됨
+
+ 
+
+   - DB 목록 조회
+
+      : \l     or     \list
+
+ 
+
+   - relation 조회
+
+      : \d
+
+ 
+
+   - relation 상세 조회
+
+      : \d+
+
+ 
+
+   - 특정 테이블 정보 조회
+
+      : \d [테이블명]
+
+ 
+
+   - DB내의 table 조회
+
+      : \dt
+
+ 
+
+   - System table 조회
+
+      : \dS
+
+ 
+
+   - view 조회
+
+      : \dv
+
+ 
+
+   - Large object 조회
+
+      : \dl
+
+ 
+
+   - index 조회
+
+      : \di
+
+ 
+
+   - function 조회
+
+      : \df
+
+ 
+
+   - schema 조회
+
+      : \dn
+
+ 
+
+   - tablespace 조회
+
+      : \db
+
+ 
+
+   - squence 조회
+
+      : SELECT * FROM PG_CATALOG.PG_SEQUENCES;
+      
+      
+      
+# 출 처 : https://ssunws.tistory.com/#
