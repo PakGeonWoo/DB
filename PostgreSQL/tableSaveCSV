@@ -1,0 +1,44 @@
+copy (
+select * from Table)
+to '/var/lib/postgresql/221213_1.csv' csv header delimiter ',';  #  해당 경로에 테이블 csv형식으로 저장 #
+
+
+# 예시 #
+copy (
+select TO_CHAR(save_date, 'yyyy-mm-dd hh24:mi'),
+AVG(CH01),
+AVG(CH02),
+AVG(CH03),
+AVG(CH04),
+AVG(CH05),
+AVG(CH06),
+AVG(CH07),
+AVG(CH08),
+AVG(CH09),
+AVG(CH10),
+AVG(CH11),
+AVG(CH12),
+AVG(CH13),
+AVG(CH14),
+AVG(CH15),
+AVG(CH16),
+AVG(CH17),
+AVG(CH18),
+AVG(CH19),
+AVG(CH20),
+AVG(CH21),
+AVG(CH22),
+AVG(CH23),
+AVG(CH24),
+AVG(CH25),
+AVG(CH26),
+AVG(CH27),
+AVG(CH28),
+AVG(CH29),
+AVG(CH30),
+AVG(CH31),
+AVG(CH32)
+from t_grimm_data where save_date>'2022-12-13 08:00:00'
+group by TO_CHAR(save_date, 'yyyy-mm-dd hh24:mi')
+order by TO_CHAR(save_date, 'yyyy-mm-dd hh24:mi'))
+to '/var/lib/postgresql/221213_1.csv' csv header delimiter ',';
